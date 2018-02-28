@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+
+<project name="web_submission" default="war" basedir=".">
+
+	<description>"Web page submission for time allocation"</description>
+
+	<!-- The directories -->
+	<property name="root-dir" 	                value="/home/cjm/workspace/reactive_time_servlet" />
+	<property name="web-inf-dir" 		        value="${root-dir}/WEB-INF" />
+	<property name="class-dir" 			value="${web-inf-dir}/bin" />
+	<property name="lib-dir" 			value="${web-inf-dir}/lib" />	
+	<property name="java-lib-dir" 			value="/home/dev/bin/javalib"/>
+	<property name="java-lib-thirdparty-dir" 	value="/home/dev/bin/javalib_third_party"/>
+	<property name="local-catalina-home" 		value="/opt/apache-tomcat-5.5.12/webapps"/>
+	
+	<!-- other definitions -->
+	
+	<property name="war-name" value="web_submission"/>
+	<property name="jar-name" value="web_submission"/>
+
+	<!-- Cleanup -->
+
+	<target name="clean" description="Clean out dross">
+		<delete verbose="true">
+			<fileset dir="." includes="**/*~" defaultexcludes="false" />
+		</delete>
+	</target>
+
+	<!-- Prepare build directories -->
+		
+	<target name="prepare" description="Prepare build directories">
+		<mkdir dir="${class-dir}" />
+		<tstamp>
+			<format property="BUILD" pattern="yyyyMMdd_HHmm" locale="en" />
+		</tstamp>
+		<echo message="Build date: ${BUILD}" />
+		
+		<!-- copy jars into lib directory -->
+		
+		<copy file="${java-lib-thirdparty-dir}/activation/activation.jar" todir="${lib-dir}"/>
+		
+		<copy file="${java-lib-thirdparty-dir}/activation/mail.jar" todir="${lib-dir}"/>
+		<copy file="${java-lib-thirdparty-dir}/activation/xerces.jar" todir="${lib-dir}"/>
+		
+		<copy file="${java-lib-thirdparty-dir}/commons/commons-beanutils-1.7.0.jar" todir="${lib-dir}"/>
+		<copy file="${java-lib-thirdparty-dir}/commons/commons-codec-1.3.jar" todir="${lib-dir}"/>
+		<copy file="${java-lib-thirdparty-dir}/commons/commons-collections-3.2.jar" todir="${lib-dir}"/>
+		<copy file="${java-lib-thirdparty-dir}/commons/commons-logging-1.0.4.jar" todir="${lib-dir}"/>
+		
+		<copy file="${java-lib-thirdparty-dir}/apache-soap/soap.jar" todir="${lib-dir}"/>
+		
+		<!-- recaptcha import -->
+		<copy file="${java-lib-thirdparty-dir}/recaptcha/recaptcha4j-0.0.7.jar" todir="${lib-dir}"/>
+		
+		<copy file="${java-lib-dir}/ngat_util_logging.jar" todir="${lib-dir}"/>
+		<!--
+		<copy file="${estar-java-lib-dir}/org_estar_nodeagent.jar" todir="${lib-dir}"/>
+		
+		<copy file="${estar-java-lib-dir}/org_estar_astrometry.jar" todir="${lib-dir}"/>
+		<copy file="${estar-java-lib-dir}/org_estar_rtml.jar" todir="${lib-dir}"/>
+		-->
+	</target>
+
+	
+	<!-- Compile all sources -->
+
+	<target name="javac" depends="prepare" description="Compile sources">
+		<javac srcdir="." 
+			destdir="${class-dir}" 
+			debug="on"
+			target="1.5"
+			source="1.5">
+			<classpath>
+				<pathelement path="${classpath}" />
+				<fileset dir="${lib-dir}">
+					<include name="*.jar" />
+					<exclude name="${jar-name}.jar" />
+				</fileset>
+				
+				<!-- servlet.jar cannot be located in /lib if we're deploying a webapp,
+					doing so contravenes Servlet Spec 2.3, section 9.7.2 -->
+				<fileset dir="${java-lib-thirdparty-dir}/servlet">
+					<include name="servlet.jar" />
+					<include name="jsp-api.jar" />
+				</fileset>
+
+			</classpath>
+		</javac>
+	</target>
+
+	<!-- Deploy to JAR after compile-->
+
+	<target name="jar" depends="javac" description="Create JAR">
+		<echo message="Build number: ${BUILD}" />
+		<echo message="Creating ${deploy-dir}/${jar-name}.jar" />
+		<jar jarfile="${lib-dir}/${jar-name}.jar" basedir="${class-dir}" update="false" />
+	</target>
+	
+	
+	<!-- Build the war file for distribution -->
+	
+	<target name="war" depends="jar">
+		<!-- delete the old .war file -->
+		<delete file="${java-lib-dir}/${war-name}.war" quiet="true"/> 
+		
+		<!-- create the .war file -->
+		<jar destfile="${java-lib-dir}/${war-name}.war" basedir="${root-dir}" />
+	</target>
+	
+	<target name="deploy" depends="war">
+		<!-- deploy to local test server -->
+		<copy file="${java-lib-dir}/${war-name}.war" todir="/opt/apache-tomcat-5.5.12/webapps"/>
+	</target>
+	
+</project>

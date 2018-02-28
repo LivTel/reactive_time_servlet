@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="WEB-INF/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jsp_servlet"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/grb_followup_lib"/>
+	<classpathentry kind="lib" path="/home/dev/bin/javalib_third_party/recaptcha/recaptcha4j-0.0.7.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/java-6-oracle"/>
+	<classpathentry kind="output" path="WEB-INF/bin"/>
+</classpath>
