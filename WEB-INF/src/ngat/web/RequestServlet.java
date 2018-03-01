@@ -151,7 +151,7 @@ public class RequestServlet extends HttpServlet {
 		} else {
 			out.println("Summary: Not all the emails were sent successfully.");
 			out.println("Please contact the support astronomer at:");
-			out.println("ltsupport_astronomer@astro.livjm.ac.uk");
+			out.println("ltsupport_astronomer@ljmu.ac.uk");
 			out.println("and give an approximate time of this failure");
 			out.println("We apologise for the inconvenience");
 		}

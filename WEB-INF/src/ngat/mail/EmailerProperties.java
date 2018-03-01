@@ -8,18 +8,18 @@ import java.util.Properties;
 
 public class EmailerProperties extends Properties{
 	
-	public static final String BASE_DIR 											= "/etc/reactive_time_mailer";
-	private static final String PROPERTIES_FILE_PATH 					= BASE_DIR + "/server.configuration";
+	public static final String BASE_DIR 					= "/etc/reactive_time_mailer";
+	private static final String PROPERTIES_FILE_PATH 		= BASE_DIR + "/server.configuration";
 																																			//e.g.:
 	public static final String KEY_MAIL_TRANSPORT_PROTOCOL	= "mail.transport.protocol";	//smtp
-	public static final String KEY_MAIL_SMTP_HOST                 	= "mail.smtp.host";			//mail.astro.livjm.ac.uk
-	public static final String KEY_MAIL_SMTP_USER                   	= "mail.smtp.user";			//eng
-	public static final String KEY_MAIL_SMTP_AUTH                   	= "mail.smtp.auth";			//eng
-	public static final String KEY_MAIL_FROM               					= "mail.from";					//ltsupport_astronomer@astro.livjm.ac.uk
-	public static final String KEY_MAIL_DEBUG               				= "mail.debug";					//true
+	public static final String KEY_MAIL_SMTP_HOST           = "mail.smtp.host";				//mail.astro.livjm.ac.uk
+	public static final String KEY_MAIL_SMTP_USER           = "mail.smtp.user";				//eng
+	public static final String KEY_MAIL_SMTP_AUTH           = "mail.smtp.auth";				//eng
+	public static final String KEY_MAIL_FROM               	= "mail.from";					//ltsupport_astronomer@ljmu.ac.uk
+	public static final String KEY_MAIL_DEBUG               = "mail.debug";					//true
 	
-	public static final String TRUE 																			= new Boolean(true).toString();
-	public static final String FALSE 																		= new Boolean(false).toString();
+	public static final String TRUE 						= new Boolean(true).toString();
+	public static final String FALSE 						= new Boolean(false).toString();
 	
 	public static EmailerProperties instance;
 	
@@ -40,7 +40,7 @@ public class EmailerProperties extends Properties{
 		this.setProperty(KEY_MAIL_SMTP_HOST, "mail.astro.livjm.ac.uk");
 		this.setProperty(KEY_MAIL_SMTP_USER, "eng");
 		this.setProperty(KEY_MAIL_SMTP_AUTH, "eng");
-		this.setProperty(KEY_MAIL_FROM, "ltsupport_astronomer@astro.livjm.ac.uk");
+		this.setProperty(KEY_MAIL_FROM, "ltsupport_astronomer@ljmu.ac.uk");
 		this.setProperty(KEY_MAIL_DEBUG, "true");
 	}
 	
