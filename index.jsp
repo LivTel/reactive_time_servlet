@@ -8,12 +8,15 @@
 <b>LT Reactive Time Application Form</b> <br><br>
 
 <form method="post" action="request_servlet">
-<br>
+<p>
 We have kept this web-page as simple as possible in order to ensure maximum compatability across browsers. However if you have problems with the form, please contact us (<a href="http://telescope.livjm.ac.uk/Contact/">using this page</a>) with details of the browser and platform you were using.
-<br>
-<br>
-Please be aware that some characters will be removed from the text. These include the >, and < symbols and the " character. This is for simple protection against XSS scripting attacks.
-<br>
+</p>
+<p>
+Everything submitted on this form will be automatically forwarded by email to all members of the Time Allocation Committee to whom you are applying. See the LT <a href="http://telescope.livjm.ac.uk/Privacy/">Privacy Statement</a>.
+</p>
+<p>
+Please be aware that some characters will be removed from the text. These include the &gt;, and &lt; symbols and the " character. This is for simple protection against XSS scripting attacks.
+</p>
 <table width="1043">
 <tbody>
 	<tr>
