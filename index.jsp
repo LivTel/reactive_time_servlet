@@ -12,10 +12,10 @@
 We have kept this web-page as simple as possible in order to ensure maximum compatability across browsers. However if you have problems with the form, please contact us (<a href="http://telescope.livjm.ac.uk/Contact/">using this page</a>) with details of the browser and platform you were using.
 </p>
 <p>
-Everything submitted on this form will be automatically forwarded by email to all members of the Time Allocation Committee to whom you are applying. See the LT <a href="http://telescope.livjm.ac.uk/Privacy/">Privacy Statement</a>.
+Please be aware that some characters will be removed from the text. These include the &gt;, and &lt; symbols and the " character. This is for simple protection against XSS scripting attacks.
 </p>
 <p>
-Please be aware that some characters will be removed from the text. These include the &gt;, and &lt; symbols and the " character. This is for simple protection against XSS scripting attacks.
+Not all TAGs set aside time for use by the REACTIVE programme. If you believe your approriate TAG is accepting REACTIVE applications but is not listed on the form, please <a href='http://telescope.livjm.ac.uk/Contact/'>contact us</a>.
 </p>
 <table width="1043">
 <tbody>
@@ -25,15 +25,15 @@ Please be aware that some characters will be removed from the text. These includ
 			<br>
 			PATT: For PIs based in the UK
 			<br>
-			CAT: For PIs based in Spain
-			<br>
+			<!-- CAT: For PIs based in Spain
+			<br> -->
 			JMU: For Liverpool John Moores University internal PIs
 			<br><br>
 			Please select: 
 			<select name="tag">
 				<option value="NOT_SELECTED" default="true">Please select</option>
 				<option value="PATT">PATT</option>
-				<option value="CAT">CAT</option>
+				<!-- <option value="CAT">CAT</option> -->
 				<option value="JMU">JMU</option>
 			</select>
 	</tr>
@@ -90,12 +90,12 @@ Please be aware that some characters will be removed from the text. These includ
 			<INPUT TYPE=CHECKBOX NAME="sprat">SPRAT<BR>
 		</td>
 	</tr>
-	<tr>
+	<!-- <tr>
 		<td></td>
 		<td>
 			<INPUT TYPE=CHECKBOX NAME="lotus">LOTUS<BR>
 		</td>
-	</tr>
+	</tr> -->
 	<tr>
 		<td></td>
 		<td>
@@ -150,7 +150,9 @@ Please be aware that some characters will be removed from the text. These includ
 	 	</td>
 </tbody>
 </table>
-<br>
+<p>
+Everything submitted on this form will be automatically forwarded by email to all members of the Time Allocation Committee to whom you are applying. See the LT <a href="http://telescope.livjm.ac.uk/Privacy/">Privacy Statement</a>.
+</p>
 <input value="Submit Request" type="submit"> <br>
 <br>
 
