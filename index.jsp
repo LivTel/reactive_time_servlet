@@ -128,13 +128,13 @@ Not all TAGs set aside time for use by the REACTIVE programme. If you believe yo
 	<tr>
 		<td align="right" width="115">Science Case: (max. 3000 char)</td>
 		<td align="left" width="928">
-			<textarea name = "sciCase" rows="16" cols="60"></textarea>
+			<textarea name = "sciCase" rows="16" cols="60" placeholder="Be brief and clear. Concentrate more on describing the observations you wish to make, how they fit into your research and their implications to the field, rather than extensive theoretical background. Maximum 3000 characters. Typically 300-400 words."></textarea>
 	 	</td>
 	</tr>
 	<tr>
 		<td align="right" width="115">Technical Case: (max. 3000 char)</td>
 		<td align="left" width="928">
-			<textarea name = "techCase" rows="16" cols="60"></textarea>
+			<textarea name = "techCase" rows="16" cols="60" placeholder="Maximum 3000 characters. Typically fewer than 200 words."></textarea>
 	 	</td>
 	</tr>
 	<tr>
