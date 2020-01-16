@@ -66,12 +66,14 @@ Not all TAGs set aside time for use by the REACTIVE programme. If you believe yo
 			<INPUT TYPE=CHECKBOX NAME="io_o">IO:O<BR>
 		</td>
 	</tr>
+	<!--
 	<tr>
 		<td></td>
 		<td>
 			<INPUT TYPE=CHECKBOX NAME="ringo3">RINGO3<BR>
 		</td>
 	</tr>
+	-->
 	<tr>
 		<td></td>
 		<td>
