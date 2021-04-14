@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>LT Reactive Time Application Form</title>
-
+<link rel="stylesheet" type="text/css" href="https://telescope.livjm.ac.uk/main.css" media="screen">
 </head>
 <body>
 
@@ -14,9 +14,11 @@ We have kept this web-page as simple as possible in order to ensure maximum comp
 <p>
 Please be aware that some characters will be removed from the text. These include the &gt;, and &lt; symbols and the " character. This is for simple protection against XSS scripting attacks.
 </p>
+<!--
 <p>
 Not all TAGs set aside time for use by the REACTIVE programme. If you believe your approriate TAG is accepting REACTIVE applications but is not listed on the form, please <a href='http://telescope.livjm.ac.uk/Contact/'>contact us</a>.
 </p>
+-->
 <table width="1043">
 <tbody>
 	<tr>
@@ -25,15 +27,15 @@ Not all TAGs set aside time for use by the REACTIVE programme. If you believe yo
 			<br>
 			PATT: For PIs based in the UK
 			<br>
-			<!-- CAT: For PIs based in Spain
-			<br> -->
+			CAT: For PIs based in Spain
+			<br>
 			JMU: For Liverpool John Moores University internal PIs
 			<br><br>
 			Please select: 
 			<select name="tag">
 				<option value="NOT_SELECTED" default="true">Please select</option>
 				<option value="PATT">PATT</option>
-				<!-- <option value="CAT">CAT</option> -->
+				<option value="CAT">CAT</option>
 				<option value="JMU">JMU</option>
 			</select>
 	</tr>
@@ -73,13 +75,13 @@ Not all TAGs set aside time for use by the REACTIVE programme. If you believe yo
 			<INPUT TYPE=CHECKBOX NAME="ringo3">RINGO3<BR>
 		</td>
 	</tr>
-	-->
 	<tr>
 		<td></td>
 		<td>
 			<INPUT TYPE=CHECKBOX NAME="frodospec">FRODOSpec<BR>
 		</td>
 	</tr>
+	-->
 	<tr>
 		<td></td>
 		<td>
@@ -92,18 +94,20 @@ Not all TAGs set aside time for use by the REACTIVE programme. If you believe yo
 			<INPUT TYPE=CHECKBOX NAME="sprat">SPRAT<BR>
 		</td>
 	</tr>
-	<!-- <tr>
+<!-- 
+	<tr>
 		<td></td>
 		<td>
 			<INPUT TYPE=CHECKBOX NAME="lotus">LOTUS<BR>
 		</td>
-	</tr> -->
+	</tr>
 	<tr>
 		<td></td>
 		<td>
 			<INPUT TYPE=CHECKBOX NAME="io_i">IO:I<BR>
 		</td>
 	</tr>
+-->
 	<tr>
 		<td align="right" width="115">Total Time Requested: </td>
 		<td align="left" width="464">
@@ -136,7 +140,7 @@ Not all TAGs set aside time for use by the REACTIVE programme. If you believe yo
 	<tr>
 		<td align="right" width="115">Technical Case: (max. 3000 char)</td>
 		<td align="left" width="928">
-			<textarea name = "techCase" rows="16" cols="60" placeholder="Maximum 3000 characters. Typically fewer than 200 words."></textarea>
+			<textarea name = "techCase" rows="16" cols="60" placeholder="Target coordindates, magnitude and other appropriate details must be provided on all applications to enable confirmation of observation feasibility. All target details provided to the TAG are treated in strict confidence. Maximum 3000 characters. Typically fewer than 200 words."></textarea>
 	 	</td>
 	</tr>
 	<tr>
