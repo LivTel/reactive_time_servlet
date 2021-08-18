@@ -5,7 +5,7 @@
 	<description>"Web page submission for time allocation"</description>
 
 	<!-- The directories -->
-	<property name="root-dir" 	                value="/home/cjm/workspace/reactive_time_servlet" />
+	<property name="root-dir" 	                value="/home/cjm/eclipse-kepler-workspace/reactive_time_servlet" />
 	<property name="web-inf-dir" 		        value="${root-dir}/WEB-INF" />
 	<property name="class-dir" 			value="${web-inf-dir}/bin" />
 	<property name="lib-dir" 			value="${web-inf-dir}/lib" />	

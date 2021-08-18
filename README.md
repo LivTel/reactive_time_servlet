@@ -6,3 +6,6 @@ cd ~/workspace
 cp -R ~dev/nrc_workspace/web_submission
 mv web_submission reactive_time_servlet
 ```
+The code should be imported into eclipse as a standard Java project.
+Note, before building the war, you must  change the value of "root-dir" in build.xml to match the path to your clone of the repository. This will ensure the resultant build has the correct WEB-INF/web.xml in the war.
+
