@@ -6,7 +6,7 @@ public class ReactiveTimeRequestBean {
 
 	private final String NO_EMAIL = "NOEMAIL";
 	private final String NOT_SELECTED = "NOT_SELECTED";
-	private String tag, appName, appInst, appEmail, io_o, ringo3, frodospec, rise, lotus, sprat, io_i, totTime, proposalTitle, progId, sciCase, techCase, whyNow, humanWord;
+	private String tag, appName, appInst, appEmail, io_o, ringo3, moptop, frodospec, rise, lotus, sprat, io_i, totTime, proposalTitle, progId, sciCase, techCase, whyNow, humanWord;
 	    
 	public String getAppEmail() {
 		return appEmail;
@@ -34,6 +34,14 @@ public class ReactiveTimeRequestBean {
 
 	public void setRingo3(String ringo3) {
 		this.ringo3 = ringo3;
+	}
+
+	public String getMoptop() {
+		return moptop;
+	}
+
+	public void setMoptop(String moptop) {
+		this.moptop = moptop;
 	}
 
 	public String getSprat() {
@@ -184,6 +192,10 @@ public class ReactiveTimeRequestBean {
 			tickedAnInstrument = true;
 			s += "RINGO3, ";
 		}
+		if (getMoptop() != null) {
+			tickedAnInstrument = true;
+			s += "MOPTOP, ";
+		}
 		if (getFrodospec() != null) {
 			tickedAnInstrument = true;
 			s += "FRODOSpec, ";
@@ -246,6 +258,7 @@ public class ReactiveTimeRequestBean {
 		appEmail = cleanXSSCharactersInString(appEmail);
 		io_o = cleanXSSCharactersInString(io_o);
 		ringo3 = cleanXSSCharactersInString(ringo3);
+		moptop = cleanXSSCharactersInString(moptop);
 		frodospec = cleanXSSCharactersInString(frodospec);
 		sprat = cleanXSSCharactersInString(sprat);
 		lotus = cleanXSSCharactersInString(lotus);
