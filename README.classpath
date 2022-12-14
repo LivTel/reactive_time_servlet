@@ -1,9 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
+The original .classpath contained the following:
 	<classpathentry kind="src" path="WEB-INF/src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jsp_servlet"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/grb_followup_lib"/>
 	<classpathentry kind="lib" path="/home/dev/bin/javalib_third_party/recaptcha/recaptcha4j-0.0.7.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/java-6-oracle"/>
 	<classpathentry kind="output" path="WEB-INF/bin"/>
-</classpath>
+
+According to ltobs9's user workspace,the jsp_servlet User Library consists of:
+activation.jar
+commons-beanutils-1.7.0.jar
+commons-codec-1.3.jar
+commons-collections-3.2.jar
+commons-logging-1.0.4.jar
+soap.jar
+xerces.jar
+
+Which can be found here:
+/home/dev/bin/javalib_third_party/activation/activation.jar
+/home/dev/bin/javalib_third_party/commons/commons-beanutils-1.7.0.jar
+/home/dev/bin/javalib_third_party/commons/commons-codec-1.3.jar
+/home/dev/bin/javalib_third_party/commons/commons-collections-3.2.jar
+/home/dev/bin/javalib_third_party/commons/commons-logging-1.0.4.jar
+/home/dev/bin/javalib_third_party/apache-soap/soap.jar
+/home/dev/bin/javalib_third_party/activation/xerces.jar
+
+We also appear to need:
+/home/dev/bin/ngat_util_logging.jar
+/home/dev/bin/javalib_third_party/activation/mail.jar
+/home/dev/bin/javalib_third_party/servlet/servlet.jar
