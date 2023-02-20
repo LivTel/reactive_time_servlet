@@ -12,7 +12,7 @@ public class EmailerProperties extends Properties{
 	private static final String PROPERTIES_FILE_PATH 		= BASE_DIR + "/server.configuration";
 																																			//e.g.:
 	public static final String KEY_MAIL_TRANSPORT_PROTOCOL	= "mail.transport.protocol";	//smtp
-	public static final String KEY_MAIL_SMTP_HOST           = "mail.smtp.host";				//mail.astro.livjm.ac.uk
+	public static final String KEY_MAIL_SMTP_HOST           = "mail.smtp.host";				//telescope.ljmu.ac.uk
 	public static final String KEY_MAIL_SMTP_USER           = "mail.smtp.user";				//eng
 	public static final String KEY_MAIL_SMTP_AUTH           = "mail.smtp.auth";				//eng
 	public static final String KEY_MAIL_FROM               	= "mail.from";					//ltsupport_astronomer@ljmu.ac.uk
@@ -37,7 +37,7 @@ public class EmailerProperties extends Properties{
 	
 	private void hardCodeProperties() {
 		this.setProperty(KEY_MAIL_TRANSPORT_PROTOCOL, "smtp");
-		this.setProperty(KEY_MAIL_SMTP_HOST, "mail.astro.livjm.ac.uk");
+		this.setProperty(KEY_MAIL_SMTP_HOST, "telescope.ljmu.ac.uk");
 		this.setProperty(KEY_MAIL_SMTP_USER, "eng");
 		this.setProperty(KEY_MAIL_SMTP_AUTH, "eng");
 		this.setProperty(KEY_MAIL_FROM, "ltsupport_astronomer@ljmu.ac.uk");

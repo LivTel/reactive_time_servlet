@@ -28,3 +28,4 @@ We also appear to need:
 /home/dev/bin/ngat_util_logging.jar
 /home/dev/bin/javalib_third_party/activation/mail.jar
 /home/dev/bin/javalib_third_party/servlet/servlet.jar
+/home/dev/bin/javalib_third_party/log4j-1.2.13.jar
