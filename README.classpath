@@ -12,6 +12,7 @@ Latest version of .classpath:
 	<classpathentry kind="lib" path="/home/dev/bin/javalib_third_party/commons/commons-collections-3.2.jar"/>
 	<classpathentry kind="lib" path="/home/dev/bin/javalib_third_party/commons/commons-logging-1.0.4.jar"/>
 	<classpathentry kind="lib" path="/home/dev/bin/javalib_third_party/apache-soap/soap.jar"/>
+	<classpathentry kind="lib" path="/home/dev/bin/javalib_third_party/log4j-1.2.13.jar"/>
 	<classpathentry kind="lib" path="/home/dev/bin/javalib/ngat_util_logging.jar"/>
 	<classpathentry kind="lib" path="/home/dev/bin/javalib_third_party/activation/mail.jar"/>
 	<classpathentry kind="lib" path="/home/dev/bin/javalib_third_party/servlet/servlet.jar"/>
