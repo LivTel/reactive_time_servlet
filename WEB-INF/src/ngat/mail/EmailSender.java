@@ -32,7 +32,11 @@ public class EmailSender
 		try {
 			System.out.println("Sending email");
 			System.out.println("  session=" + session);
-
+			System.out.println("  KEY_MAIL_TRANSPORT_PROTOCOL:"+properties.getProperty(EmailerProperties.KEY_MAIL_TRANSPORT_PROTOCOL));
+			System.out.println("  KEY_MAIL_SMTP_HOST:"+properties.getProperty(EmailerProperties.KEY_MAIL_SMTP_HOST));
+			System.out.println("  KEY_MAIL_SMTP_USER:"+properties.getProperty(EmailerProperties.KEY_MAIL_SMTP_USER));
+			System.out.println("  KEY_MAIL_SMTP_AUTH:"+properties.getProperty(EmailerProperties.KEY_MAIL_SMTP_AUTH));
+			System.out.println("  KEY_MAIL_DEBUG:"+properties.getProperty(EmailerProperties.KEY_MAIL_DEBUG));
 			MimeMessage message = new MimeMessage(session);
 			
 			//set the 'from' property from the settings file
