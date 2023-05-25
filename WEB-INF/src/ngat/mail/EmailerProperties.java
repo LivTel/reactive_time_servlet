@@ -6,7 +6,12 @@ import java.io.PrintWriter;
 import java.util.Enumeration;
 import java.util.Properties;
 
-public class EmailerProperties extends Properties{
+/**
+ * An instance of this class is used to store properties used to configure the JavaMail mailer.
+ * @author cjm
+ */
+public class EmailerProperties extends Properties
+{
 	
 	public static final String BASE_DIR 					= "/etc/reactive_time_mailer";
 	private static final String PROPERTIES_FILE_PATH 		= BASE_DIR + "/server.configuration";
@@ -35,7 +40,11 @@ public class EmailerProperties extends Properties{
 		return instance;
 	}
 	
-	private void hardCodeProperties() {
+	/**
+	 * Internal method to hardcode a suitable set of properties for configuring JavaMail.
+	 */
+	private void hardCodeProperties() 
+	{
 		this.setProperty(KEY_MAIL_TRANSPORT_PROTOCOL, "smtp");
 		this.setProperty(KEY_MAIL_SMTP_HOST, "telescope.ljmu.ac.uk");
 		this.setProperty(KEY_MAIL_SMTP_USER, "eng");
@@ -44,11 +53,23 @@ public class EmailerProperties extends Properties{
 		this.setProperty(KEY_MAIL_DEBUG, "true");
 	}
 	
+	/**
+	 * Constructor. Load the mail configuration properties from the properties file PROPERTIES_FILE_PATH.
+	 * @throws IOException Thrown if the property file cannot be loaded.
+	 * @see #getPropertiesFromFile
+	 * @see #PROPERTIES_FILE_PATH
+	 */
 	private EmailerProperties() throws IOException {
-		hardCodeProperties();
-		//super(getPropertiesFromFile(PROPERTIES_FILE_PATH));
+		//hardCodeProperties();
+		super(getPropertiesFromFile(PROPERTIES_FILE_PATH));
 	}
 	
+	/**
+	 * Method to load a set of properties from a properties file.
+	 * @param sfp A string containing the filename of a valid proeprties file to load.
+	 * @return The routine returns a set of loaded Properties on success.
+	 * @throws IOException The method throws an IOException if the properties cannot be loaded from the properties file.
+	 */
 	private static Properties getPropertiesFromFile(String sfp) throws IOException {
 		Properties properties = new Properties();
 		FileInputStream in = new FileInputStream(sfp);
@@ -58,12 +79,12 @@ public class EmailerProperties extends Properties{
 	
 	public void debugShowProperties(PrintWriter out) {
 		out.println();
-		Enumeration keysE = this.keys();
+		Enumeration keysE = this.propertyNames();
 		String s = this.getClass().getName() +"[";
 		boolean hadElements = false;
 		while (keysE.hasMoreElements()) {
-			Object key = keysE.nextElement();
-			Object value = this.get(key);
+			String key = keysE.nextElement().toString();
+			String value = this.getProperty(key).toString();
 			s += key + ":" + value +", ";
 			hadElements = true;
 		}

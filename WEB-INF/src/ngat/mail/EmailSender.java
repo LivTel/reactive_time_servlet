@@ -1,8 +1,10 @@
 package ngat.mail;
 
+import java.io.PrintWriter;
 import java.util.Iterator;
 import java.util.Properties;
 
+import com.sun.mail.smtp.SMTPTransport;
 import javax.mail.Message;
 import javax.mail.Session;
 import javax.mail.Transport;
@@ -13,30 +15,28 @@ import javax.mail.internet.MimeMessage;
 public class EmailSender
 {
 	private static Session session = null;
-	private Properties properties;
+	private EmailerProperties properties;
 	
-	public EmailSender() {
+	public EmailSender() 
+	{
 		properties = EmailerProperties.getInstance();
 		
-		//session = Session.getDefaultInstance(properties, null);
-		session = Session.getInstance(properties, null);
+		session = Session.getDefaultInstance(properties);
 		
 		//no SMTP debug output (we get stacks of socket output if it is)
-		session.setDebug(false);
+		//session.setDebug(false);
 	}
 		
-	public boolean send(Email email) {
-		Transport transport = null;
+	public boolean send(Email email) 
+	{
+		SMTPTransport transport = null;
 		boolean sendSuccess = false;
 		
-		try {
+		try 
+		{
 			System.out.println("Sending email");
 			System.out.println("  session=" + session);
-			System.out.println("  KEY_MAIL_TRANSPORT_PROTOCOL:"+properties.getProperty(EmailerProperties.KEY_MAIL_TRANSPORT_PROTOCOL));
-			System.out.println("  KEY_MAIL_SMTP_HOST:"+properties.getProperty(EmailerProperties.KEY_MAIL_SMTP_HOST));
-			System.out.println("  KEY_MAIL_SMTP_USER:"+properties.getProperty(EmailerProperties.KEY_MAIL_SMTP_USER));
-			System.out.println("  KEY_MAIL_SMTP_AUTH:"+properties.getProperty(EmailerProperties.KEY_MAIL_SMTP_AUTH));
-			System.out.println("  KEY_MAIL_DEBUG:"+properties.getProperty(EmailerProperties.KEY_MAIL_DEBUG));
+			properties.debugShowProperties(new PrintWriter(System.out));
 			MimeMessage message = new MimeMessage(session);
 			
 			//set the 'from' property from the settings file
@@ -63,9 +63,12 @@ public class EmailSender
 			message.saveChanges();
 			
 			System.out.println("message: " + message);
-			
-			transport = session.getTransport("smtp");
-			transport.connect(); //throws MessagingException if no connection to the internet
+
+			String smtpServer = properties.getProperty("mail.smtp.host");
+			String smtpUsername = properties.getProperty("mail.smtp.user");
+			String smtpPassword = properties.getProperty("mail.smtp.password");
+			transport = (SMTPTransport) session.getTransport();
+			transport.connect(smtpServer, smtpUsername, smtpPassword);
 			transport.send(message, message.getAllRecipients());
 			transport.close();
 			
