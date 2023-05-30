@@ -38,9 +38,11 @@
 		<!-- copy jars into lib directory -->
 		
 		<copy file="${java-lib-thirdparty-dir}/activation/activation.jar" todir="${lib-dir}"/>
-		
+		<!--
 		<copy file="${java-lib-thirdparty-dir}/activation/mail.jar" todir="${lib-dir}"/>
 		<copy file="${java-lib-thirdparty-dir}/activation/xerces.jar" todir="${lib-dir}"/>
+		-->
+		<copy file="${java-lib-thirdparty-dir}/javamail/javax.mail.jar" todir="${lib-dir}"/>
 		
 		<copy file="${java-lib-thirdparty-dir}/commons/commons-beanutils-1.7.0.jar" todir="${lib-dir}"/>
 		<copy file="${java-lib-thirdparty-dir}/commons/commons-codec-1.3.jar" todir="${lib-dir}"/>
@@ -68,8 +70,8 @@
 		<javac srcdir="." 
 			destdir="${class-dir}" 
 			debug="on"
-			target="1.5"
-			source="1.5">
+			target="1.8"
+			source="1.8">
 			<classpath>
 				<pathelement path="${classpath}" />
 				<fileset dir="${lib-dir}">
