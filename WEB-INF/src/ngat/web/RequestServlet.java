@@ -24,9 +24,6 @@ import ngat.mail.EmailerProperties;
 import ngat.util.logging.LogManager;
 import ngat.util.logging.Logger;
 
-import net.tanesha.recaptcha.ReCaptchaImpl;
-import net.tanesha.recaptcha.ReCaptchaResponse;
-
 public class RequestServlet extends HttpServlet {
 	
 	static Logger traceLogger, errorLogger;
@@ -70,26 +67,7 @@ public class RequestServlet extends HttpServlet {
 		
 		//test for correctly entered captcha text
 		String remoteAddr = request.getRemoteAddr();
-		
-		/*
-		//recaptcha code - stopped working, no Java version now
-		
-        ReCaptchaImpl reCaptcha = new ReCaptchaImpl();
-        reCaptcha.setPrivateKey("6LcXjPASAAAAAK_NScXnW80mdTKZsYkaMmY9Nu0M");
-		String challenge = request.getParameter("recaptcha_challenge_field");
-        String uresponse = request.getParameter("recaptcha_response_field");
-        
-        ReCaptchaResponse reCaptchaResponse = reCaptcha.checkAnswer(remoteAddr, challenge, uresponse);
-
-        if (!reCaptchaResponse.isValid()) {
-          traceLogger.log(5, RequestServlet.class.getName(), "The Captcha text entered was incorrect.");
-          out.println("The Captcha text entered was incorrect. Click 'back' to try again.\n");
-          traceLogger.log(5, RequestServlet.class.getName(), "... REQUEST FAILED HUMANITY TEST.");
-          traceLogger.log(5, RequestServlet.class.getName(), reactiveTimeRequestBean.toString());
-          return;
-        }
-		*/
-        
+		       
 		if (!reactiveTimeRequestBean.tagIsValid()) {
 			traceLogger.log(5, RequestServlet.class.getName(), "... user didn't select a TAG. No emails will be sent.");
 			out.println("No TAG was selected so NO EMAILS WERE SENT\n");
