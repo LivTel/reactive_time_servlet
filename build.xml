@@ -5,7 +5,7 @@
 	<description>"Web page submission for time allocation"</description>
 
 	<!-- The directories -->
-	<property name="root-dir" 	                value="/home/cjm/eclipse-kepler-workspace/reactive_time_servlet" />
+	<property name="root-dir" 	                value="/home/cjm/eclipse-workspace/reactive_time_servlet" />
 	<property name="web-inf-dir" 		        value="${root-dir}/WEB-INF" />
 	<property name="class-dir" 			value="${web-inf-dir}/bin" />
 	<property name="lib-dir" 			value="${web-inf-dir}/lib" />	
@@ -52,8 +52,9 @@
 		<copy file="${java-lib-thirdparty-dir}/apache-soap/soap.jar" todir="${lib-dir}"/>
 		
 		<!-- recaptcha import -->
+		<!--
 		<copy file="${java-lib-thirdparty-dir}/recaptcha/recaptcha4j-0.0.7.jar" todir="${lib-dir}"/>
-		
+		-->
 		<copy file="${java-lib-dir}/ngat_util_logging.jar" todir="${lib-dir}"/>
 		<!--
 		<copy file="${estar-java-lib-dir}/org_estar_nodeagent.jar" todir="${lib-dir}"/>
