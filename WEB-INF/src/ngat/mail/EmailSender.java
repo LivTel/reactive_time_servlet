@@ -67,9 +67,12 @@ public class EmailSender
 			String smtpServer = properties.getProperty("mail.smtp.host");
 			String smtpUsername = properties.getProperty("mail.smtp.user");
 			String smtpPassword = properties.getProperty("mail.smtp.password");
+			System.out.println("Getting transport from session.");
 			transport = (SMTPTransport) session.getTransport();
+			System.out.println("Connecting using server:"+smtpServer+" username:"+smtpUsername);
 			transport.connect(smtpServer, smtpUsername, smtpPassword);
-			transport.send(message, message.getAllRecipients());
+			System.out.println("Sending message to "+message.getAllRecipients());
+			transport.sendMessage(message, message.getAllRecipients());
 			transport.close();
 			
 			sendSuccess = true;
