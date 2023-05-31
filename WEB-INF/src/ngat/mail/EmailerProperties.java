@@ -41,26 +41,13 @@ public class EmailerProperties extends Properties
 	}
 	
 	/**
-	 * Internal method to hardcode a suitable set of properties for configuring JavaMail.
-	 */
-	private void hardCodeProperties() 
-	{
-		this.setProperty(KEY_MAIL_TRANSPORT_PROTOCOL, "smtp");
-		this.setProperty(KEY_MAIL_SMTP_HOST, "telescope.ljmu.ac.uk");
-		this.setProperty(KEY_MAIL_SMTP_USER, "eng");
-		this.setProperty(KEY_MAIL_SMTP_AUTH, "eng");
-		this.setProperty(KEY_MAIL_FROM, "ltsupport_astronomer@ljmu.ac.uk");
-		this.setProperty(KEY_MAIL_DEBUG, "true");
-	}
-	
-	/**
 	 * Constructor. Load the mail configuration properties from the properties file PROPERTIES_FILE_PATH.
 	 * @throws IOException Thrown if the property file cannot be loaded.
 	 * @see #getPropertiesFromFile
 	 * @see #PROPERTIES_FILE_PATH
 	 */
-	private EmailerProperties() throws IOException {
-		//hardCodeProperties();
+	private EmailerProperties() throws IOException 
+	{
 		super(getPropertiesFromFile(PROPERTIES_FILE_PATH));
 	}
 	
