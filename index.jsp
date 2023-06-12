@@ -27,15 +27,15 @@ Not all TAGs set aside time for use by the REACTIVE programme. If you believe yo
 			<br>
 			PATT: For PIs based in the UK
 			<br>
-			<!-- CAT: For PIs based in Spain
-			<br>-->
+			CAT: For PIs based in Spain
+			<br>
 			JMU: For Liverpool John Moores University internal PIs
 			<br><br>
 			Please select: 
 			<select name="tag">
 				<option value="NOT_SELECTED" default="true">Please select</option>
 				<option value="PATT">PATT</option>
-				<!-- <option value="CAT">CAT</option> -->
+				<option value="CAT">CAT</option>
 				<option value="JMU">JMU</option>
 			</select>
 	</tr>
